@@ -1,0 +1,27 @@
+========================================
+  LOG DRAWINGAPP - 2026-05-17 15:05:58
+========================================
+[2026-05-17 15:05:58] Stratégie de logging changée vers: FILE
+[2026-05-17 15:06:20] Command EXECUTE: Ajout de Rectangle2D[126,00,61,00 -> 203,00,140,00, Area:6083,00]
+[2026-05-17 15:06:28] Command UNDO: Retrait de Rectangle2D[126,00,61,00 -> 203,00,140,00, Area:6083,00]
+========================================
+  LOG DRAWINGAPP - 2026-05-17 16:09:19
+========================================
+[2026-05-17 16:09:19] Stratégie de logging changée vers: FILE
+[2026-05-17 16:09:41] Palette notifie - Événement: DIMENSION_CHANGED, Dimension: 2D, Forme: RECTANGLE
+[2026-05-17 16:09:41] Forme sélectionnée: 3D - CUBE
+[2026-05-17 16:09:41] Palette notifie - Événement: SHAPE_SELECTED, Dimension: 3D, Forme: CUBE
+[2026-05-17 16:09:41] Forme sélectionnée: 3D - CUBE
+[2026-05-17 16:09:41] Palette notifie - Événement: SHAPE_SELECTED, Dimension: 3D, Forme: CUBE
+[2026-05-17 16:09:42] Command EXECUTE: Ajout de com.drawingapp.adapter.Shape3DAdapter@6400eed8
+[2026-05-17 16:09:45] Forme sélectionnée: 3D - CYLINDER
+[2026-05-17 16:09:45] Palette notifie - Événement: SHAPE_SELECTED, Dimension: 3D, Forme: CYLINDER
+[2026-05-17 16:09:46] Command EXECUTE: Ajout de com.drawingapp.adapter.Shape3DAdapter@24d4cc2e
+[2026-05-17 16:09:47] Forme sélectionnée: 3D - PYRAMID
+[2026-05-17 16:09:47] Palette notifie - Événement: SHAPE_SELECTED, Dimension: 3D, Forme: PYRAMID
+[2026-05-17 16:09:48] Command EXECUTE: Ajout de com.drawingapp.adapter.Shape3DAdapter@4476216b
+[2026-05-17 16:09:51] Command UNDO: Retrait de com.drawingapp.adapter.Shape3DAdapter@4476216b
+[2026-05-17 16:09:52] Command REDO: Ré-ajout de com.drawingapp.adapter.Shape3DAdapter@4476216b
+[2026-05-17 16:10:22] Command EXECUTE: Ajout de com.drawingapp.adapter.Shape3DAdapter@a5e21b5
+[2026-05-17 16:10:23] Command EXECUTE: Ajout de com.drawingapp.adapter.Shape3DAdapter@51f0ff63
+[2026-05-17 16:10:25] Command UNDO: Retrait de com.drawingapp.adapter.Shape3DAdapter@51f0ff63

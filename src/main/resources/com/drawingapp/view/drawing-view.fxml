@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  drawing-view.fxml — MODIFICATION POUR LE MODULE GRAPHE
+  =========================================================
+
+  Pour intégrer l'onglet "Graphe", encapsulez votre interface existante
+  dans un TabPane comme montré ci-dessous.
+
+  AVANT (structure simplifiée) :
+  ─────────────────────────────
+    <VBox xmlns:fx="..." fx:controller="...DrawingView">
+      <ToolBar> ... </ToolBar>
+      <Canvas fx:id="canvas" ... />
+    </VBox>
+
+  APRÈS :
+  ──────
+-->
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.drawingapp.view.DrawingView"
+      spacing="0">
+
+    <!-- ── Onglets principaux ── -->
+    <TabPane fx:id="mainTabPane" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+
+        <!-- ══ Onglet 1 : Dessin (votre UI existante, inchangée) ══ -->
+        <Tab text="✏ Dessin">
+            <VBox spacing="4" style="-fx-padding: 6 8 6 8;">
+
+                <!-- Toolbar ligne 1 : dimension + forme + undo/redo/clear -->
+                <ToolBar>
+                    <Label text="Dimension :"/>
+                    <RadioButton fx:id="radio2D" text="2D" onAction="#select2D"/>
+                    <RadioButton fx:id="radio3D" text="3D" onAction="#select3D"/>
+                    <Separator/>
+                    <Label text="Forme :"/>
+                    <ComboBox fx:id="shapeComboBox" prefWidth="130"/>
+                    <Separator/>
+                    <Button text="↩ Undo"       onAction="#undo"     style="-fx-background-color:#e53935;-fx-text-fill:white;"/>
+                    <Button text="Redo ↪"       onAction="#redo"     style="-fx-background-color:#43a047;-fx-text-fill:white;"/>
+                    <Button text="🗑 Effacer tout" onAction="#clearAll" style="-fx-background-color:#546e7a;-fx-text-fill:white;"/>
+                    <Separator/>
+                    <Button text="💾 Sauver"   onAction="#saveDrawing"   style="-fx-background-color:#1976d2;-fx-text-fill:white;"/>
+                    <Button text="📂 Charger"  onAction="#loadDrawing"   style="-fx-background-color:#f57c00;-fx-text-fill:white;"/>
+                    <Button text="🗑 Supprimer" onAction="#deleteDrawing" style="-fx-background-color:#c62828;-fx-text-fill:white;"/>
+                </ToolBar>
+
+                <!-- Toolbar ligne 2 : logging + info -->
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Journalisation :"/>
+                    <ComboBox fx:id="loggingStrategyCombo" onAction="#changeLoggingStrategy"/>
+                    <Label fx:id="infoLabel" text="Mode: 2D | Forme: RECTANGLE"
+                           style="-fx-font-weight:bold; -fx-text-fill:#1565c0;"/>
+                </HBox>
+
+                <!-- Canvas de dessin -->
+                <Canvas fx:id="canvas" width="830" height="580"
+                        style="-fx-background-color: white;"/>
+            </VBox>
+        </Tab>
+
+        <!-- ══ Onglet 2 : Graphe — Plus court chemin ══ -->
+        <Tab text="🔗 Graphe — Plus court chemin" fx:id="graphTab">
+            <!--
+              Le contenu est injecté dynamiquement dans DrawingView.initialize()
+              via GraphController.buildPane(). Laissez ce Tab vide.
+            -->
+        </Tab>
+
+    </TabPane>
+</VBox>
