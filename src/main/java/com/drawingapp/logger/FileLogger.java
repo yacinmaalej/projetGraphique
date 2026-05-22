@@ -21,14 +21,14 @@ public class FileLogger implements Logger {
         File dir = new File(logDir);
         if (!dir.exists()) {
             boolean created = dir.mkdirs();
-            System.out.println("📁 Dossier logs créé: " + dir.getAbsolutePath() + " - " + (created ? "OK" : "ÉCHEC"));
+            System.out.println(" Dossier logs créé: " + dir.getAbsolutePath() + " - " + (created ? "OK" : "ÉCHEC"));
         }
 
         // Fichier de log avec date
         String date = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd"));
         this.logFilePath = logDir + File.separator + "drawingapp_" + date + ".log";
 
-        System.out.println("📄 Fichier log: " + new File(logFilePath).getAbsolutePath());
+        System.out.println(" Fichier log: " + new File(logFilePath).getAbsolutePath());
 
         // Écrire l'en-tête
         try (PrintWriter writer = new PrintWriter(new FileWriter(logFilePath, true))) {
@@ -37,7 +37,7 @@ public class FileLogger implements Logger {
             writer.println("========================================");
             writer.flush();
         } catch (IOException e) {
-            System.err.println("❌ Erreur création fichier log: " + e.getMessage());
+            System.err.println(" Erreur création fichier log: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -79,7 +79,7 @@ public class FileLogger implements Logger {
             writer.println(message);
             writer.flush();
         } catch (IOException e) {
-            System.err.println("❌ Erreur écriture fichier log: " + e.getMessage());
+            System.err.println(" Erreur écriture fichier log: " + e.getMessage());
             e.printStackTrace();
         }
     }

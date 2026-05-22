@@ -33,7 +33,7 @@ public class LogRepository {
                 logs.add("[" + timestamp + "] " + action);
             }
         } catch (SQLException e) {
-            System.err.println("❌ Erreur chargement logs: " + e.getMessage());
+            System.err.println(" Erreur chargement logs: " + e.getMessage());
         }
 
         return logs;
@@ -47,7 +47,7 @@ public class LogRepository {
             db.getConnection().createStatement().executeUpdate("DELETE FROM logs");
             System.out.println("🗑 Logs effacés de la base de données");
         } catch (SQLException e) {
-            System.err.println("❌ Erreur effacement logs: " + e.getMessage());
+            System.err.println(" Erreur effacement logs: " + e.getMessage());
         }
     }
 }

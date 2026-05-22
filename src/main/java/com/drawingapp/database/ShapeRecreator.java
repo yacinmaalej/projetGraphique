@@ -43,9 +43,9 @@ public class ShapeRecreator {
                 }
             }
 
-            System.out.println("✅ " + shapes.size() + " forme(s) reconstruite(s) depuis le JSON");
+            System.out.println(" " + shapes.size() + " forme(s) reconstruite(s) depuis le JSON");
         } catch (Exception e) {
-            System.err.println("❌ Erreur reconstruction formes: " + e.getMessage());
+            System.err.println(" Erreur reconstruction formes: " + e.getMessage());
             e.printStackTrace();
         }
 
@@ -66,7 +66,7 @@ public class ShapeRecreator {
                     .newInstance(startX, startY, endX, endY);
 
         } catch (Exception e) {
-            System.err.println("❌ Erreur création forme: " + e.getMessage());
+            System.err.println(" Erreur création forme: " + e.getMessage());
             return null;
         }
     }

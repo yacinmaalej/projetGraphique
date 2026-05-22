@@ -18,12 +18,12 @@ public class DatabaseConnection {
             Class.forName("com.mysql.cj.jdbc.Driver");
             createDatabaseIfNotExists();
             this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
-            System.out.println("✅ Connexion MySQL réussie !");
+            System.out.println(" Connexion MySQL réussie !");
             createTables();
         } catch (ClassNotFoundException e) {
-            System.err.println("❌ Driver MySQL non trouvé: " + e.getMessage());
+            System.err.println(" Driver MySQL non trouvé: " + e.getMessage());
         } catch (SQLException e) {
-            System.err.println("❌ Erreur connexion MySQL: " + e.getMessage());
+            System.err.println(" Erreur connexion MySQL: " + e.getMessage());
             System.err.println("Vérifiez que XAMPP MySQL est démarré !");
         }
     }
@@ -34,9 +34,9 @@ public class DatabaseConnection {
             tempConn.createStatement().executeUpdate(
                     "CREATE DATABASE IF NOT EXISTS drawingapp"
             );
-            System.out.println("✅ Base de données 'drawingapp' vérifiée/créée");
+            System.out.println(" Base de données 'drawingapp' vérifiée/créée");
         } catch (SQLException e) {
-            System.err.println("❌ Erreur création base de données: " + e.getMessage());
+            System.err.println(" Erreur création base de données: " + e.getMessage());
         }
     }
 
@@ -63,9 +63,9 @@ public class DatabaseConnection {
         try {
             connection.createStatement().executeUpdate(createLogsTable);
             connection.createStatement().executeUpdate(createDrawingsTable);
-            System.out.println("✅ Tables 'logs' et 'drawings' vérifiées/créées");
+            System.out.println(" Tables 'logs' et 'drawings' vérifiées/créées");
         } catch (SQLException e) {
-            System.err.println("❌ Erreur création tables: " + e.getMessage());
+            System.err.println(" Erreur création tables: " + e.getMessage());
         }
     }
 
@@ -96,7 +96,7 @@ public class DatabaseConnection {
         try {
             if (connection != null && !connection.isClosed()) {
                 connection.close();
-                System.out.println("🔒 Connexion MySQL fermée");
+                System.out.println(" Connexion MySQL fermée");
             }
         } catch (SQLException e) {
             System.err.println("Erreur fermeture connexion: " + e.getMessage());

@@ -10,13 +10,13 @@ public class LoggerFactory {
         };
     }
 
-    public static Logger getLogger(String strategyName) {
-        try {
-            LoggingStrategy strategy = LoggingStrategy.valueOf(strategyName.toUpperCase());
-            return getLogger(strategy);
-        } catch (IllegalArgumentException e) {
-            System.err.println("Stratégie inconnue: " + strategyName + ", utilisation de CONSOLE");
-            return ConsoleLogger.getInstance();
-        }
-    }
+//    public static Logger getLogger(String strategyName) {
+//        try {
+//            LoggingStrategy strategy = LoggingStrategy.valueOf(strategyName.toUpperCase());
+//            return getLogger(strategy);
+//        } catch (IllegalArgumentException e) {
+//            System.err.println("Stratégie inconnue: " + strategyName + ", utilisation de CONSOLE");
+//            return ConsoleLogger.getInstance();
+//        }
+//    }
 }

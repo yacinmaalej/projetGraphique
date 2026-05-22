@@ -31,7 +31,7 @@ public class DrawingRepository {
     public boolean saveDrawing(String name, List<Shape> shapes) {
         DatabaseConnection db = DatabaseConnection.getInstance();
         if (!db.isConnected()) {
-            System.err.println("❌ Base de données non connectée");
+            System.err.println(" Base de données non connectée");
             return false;
         }
 
@@ -69,10 +69,10 @@ public class DrawingRepository {
             stmt.setTimestamp(5, now);
 
             int rows = stmt.executeUpdate();
-            System.out.println("✅ Dessin sauvegardé: " + name + " (" + shapes.size() + " formes)");
+            System.out.println(" Dessin sauvegardé: " + name + " (" + shapes.size() + " formes)");
             return rows > 0;
         } catch (SQLException e) {
-            System.err.println("❌ Erreur sauvegarde dessin: " + e.getMessage());
+            System.err.println(" Erreur sauvegarde dessin: " + e.getMessage());
             return false;
         }
     }
@@ -96,7 +96,7 @@ public class DrawingRepository {
                 drawings.put(id, name + " [" + date + "]");
             }
         } catch (SQLException e) {
-            System.err.println("❌ Erreur chargement noms dessins: " + e.getMessage());
+            System.err.println(" Erreur chargement noms dessins: " + e.getMessage());
         }
 
         return drawings;
@@ -117,7 +117,7 @@ public class DrawingRepository {
                 return rs.getString("shapes_data");
             }
         } catch (SQLException e) {
-            System.err.println("❌ Erreur chargement dessin: " + e.getMessage());
+            System.err.println(" Erreur chargement dessin: " + e.getMessage());
         }
 
         return null;
@@ -136,7 +136,7 @@ public class DrawingRepository {
             System.out.println("🗑 Dessin #" + drawingId + " supprimé");
             return rows > 0;
         } catch (SQLException e) {
-            System.err.println("❌ Erreur suppression dessin: " + e.getMessage());
+            System.err.println(" Erreur suppression dessin: " + e.getMessage());
             return false;
         }
     }

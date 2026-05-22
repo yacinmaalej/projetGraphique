@@ -239,7 +239,6 @@ public class Dessin implements Observer {
         commandHistory.clear(); // Vider l'historique undo/redo
 
         for (Shape shape : loadedShapes) {
-            // ★★★ Ré-appliquer l'Adapter aux formes 3D ★★★
             if (shape.getType().equals("3D")) {
                 shape = new com.drawingapp.adapter.Shape3DAdapter(shape);
             }

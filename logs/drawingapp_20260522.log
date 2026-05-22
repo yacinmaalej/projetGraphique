@@ -1,0 +1,5 @@
+========================================
+  LOG DRAWINGAPP - 2026-05-22 19:50:49
+========================================
+[2026-05-22 19:50:49] Stratégie de logging changée vers: FILE
+[2026-05-22 19:50:51] Command EXECUTE: Ajout de Rectangle2D[229,52 → 291,100 | Aire:2976]

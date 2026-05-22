@@ -15,7 +15,7 @@ public class DatabaseLogger implements Logger {
 
     private DatabaseLogger() {
         this.loggingStrategy = LoggingStrategy.DATABASE;
-        System.out.println("📊 DatabaseLogger initialisé");
+        System.out.println(" DatabaseLogger initialisé");
     }
 
     public static DatabaseLogger getInstance() {
@@ -52,7 +52,7 @@ public class DatabaseLogger implements Logger {
     private void saveToDatabase(LocalDateTime dateTime, String action) {
         DatabaseConnection db = DatabaseConnection.getInstance();
         if (!db.isConnected()) {
-            System.err.println("⚠️ Base de données non connectée, log en console: " + action);
+            System.err.println("⚠ Base de données non connectée, log en console: " + action);
             return;
         }
 
@@ -62,9 +62,9 @@ public class DatabaseLogger implements Logger {
             stmt.setTimestamp(1, Timestamp.valueOf(dateTime)); // ← Convertir en Timestamp SQL
             stmt.setString(2, action);
             int rows = stmt.executeUpdate();
-            System.out.println("✅ Log inséré en DB: " + action + " (rows: " + rows + ")");
+            System.out.println(" Log inséré en DB: " + action + " (rows: " + rows + ")");
         } catch (SQLException e) {
-            System.err.println("❌ Erreur sauvegarde log en DB: " + e.getMessage());
+            System.err.println(" Erreur sauvegarde log en DB: " + e.getMessage());
             e.printStackTrace(); // ← Afficher la stack trace complète
         }
     }
